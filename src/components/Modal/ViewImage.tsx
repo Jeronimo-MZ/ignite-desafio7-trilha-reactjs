@@ -23,10 +23,10 @@ export function ModalViewImage({
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
       <ModalContent>
-        <ModalBody maxWidth={900} maxHeight={600} bgColor="gray.900">
-          <Image src={imgUrl} objectFit="cover" maxHeight={600} />
+        <ModalBody maxWidth={900} maxHeight={600} bgColor="gray.900" p={0}>
+          <Image src={imgUrl} objectFit="cover" w="100%" maxHeight={600} />
         </ModalBody>
-        <ModalFooter bg="gray.900" justifyContent="flex-start">
+        <ModalFooter bg="gray.900" justifyContent="flex-start" py="1" px="2">
           <Link target="_blank" href={imgUrl}>
             Abrir original
           </Link>
