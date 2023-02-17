@@ -18,10 +18,13 @@ export default function Home(): JSX.Element {
     hasNextPage,
   } = useInfiniteQuery(
     'images',
-    // TODO AXIOS REQUEST WITH PARAM
-    ,
+    ({ pageParam = 0 }) => {
+      return api.get('/api/images');
+    }
     // TODO GET AND RETURN NEXT PAGE PARAM
   );
+
+  console.log(data);
 
   const formattedData = useMemo(() => {
     // TODO FORMAT AND FLAT DATA ARRAY
@@ -36,7 +39,7 @@ export default function Home(): JSX.Element {
       <Header />
 
       <Box maxW={1120} px={20} mx="auto" my={20}>
-        <CardList cards={formattedData} />
+        {/* <CardList cards={formattedData} /> */}
         {/* TODO RENDER LOAD MORE BUTTON IF DATA HAS NEXT PAGE */}
       </Box>
     </>
